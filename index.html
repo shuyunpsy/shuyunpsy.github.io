@@ -7,6 +7,10 @@
   <title>舒雲｜Shuyun</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: #ffffff;
@@ -21,85 +25,247 @@
       line-height: 1.9;
     }
 
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 80px 28px;
+    a {
+      color: inherit;
     }
 
-    .small {
+    .site-header {
+      border-bottom: 1px solid #ece8e2;
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .top-nav a:hover {
+      color: #222;
+    }
+
+    .top-nav .cta {
+      border: 1px solid #d8d2ca;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: #333;
+    }
+
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 76px 28px 64px;
+    }
+
+    .eyebrow {
       color: #888;
       font-size: 14px;
       letter-spacing: 0.12em;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     h1 {
-      font-size: 48px;
-      font-weight: 500;
       margin: 0;
-      line-height: 1.25;
+      font-size: clamp(42px, 7vw, 70px);
+      font-weight: 500;
+      line-height: 1.2;
     }
 
     .role {
       margin-top: 18px;
       color: #777;
-      font-size: 16px;
+      font-size: 17px;
     }
 
-    .quote {
-      margin-top: 80px;
-      padding-left: 24px;
-      border-left: 1px solid #d8d2ca;
-      font-size: 24px;
+    .hero-text {
+      margin-top: 56px;
+      max-width: 760px;
+      font-size: 22px;
       line-height: 1.8;
     }
 
-    .intro {
-      margin-top: 60px;
-      color: #666;
-      max-width: 600px;
+    .hero-sub {
+      margin-top: 24px;
+      color: #777;
+      max-width: 720px;
     }
 
-    .menu {
-      margin-top: 80px;
+    .content-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 28px 90px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+      gap: 64px;
+      align-items: start;
+    }
+
+    .section-title {
+      font-size: 15px;
+      color: #888;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+    }
+
+    .article-list {
       border-top: 1px solid #ece8e2;
     }
 
-    .menu a {
-      display: flex;
-      justify-content: space-between;
-      text-decoration: none;
-      color: #333;
-      font-size: 17px;
-      padding: 18px 0;
+    .article-item {
+      padding: 26px 0;
       border-bottom: 1px solid #ece8e2;
     }
 
-    .menu a:hover {
+    .article-item h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .article-item p {
+      margin: 10px 0 0;
+      color: #777;
+      font-size: 15px;
+    }
+
+    .article-item a {
+      text-decoration: none;
+    }
+
+    .article-item a:hover h2 {
       color: #777;
     }
 
+    .sidebar {
+      position: sticky;
+      top: 30px;
+    }
+
+    .side-block {
+      margin-bottom: 42px;
+    }
+
+    .side-links {
+      border-top: 1px solid #ece8e2;
+    }
+
+    .side-links a {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      text-decoration: none;
+      padding: 15px 0;
+      border-bottom: 1px solid #ece8e2;
+      font-size: 16px;
+    }
+
+    .side-links a:hover {
+      color: #777;
+    }
+
+    .highlight {
+      background: #faf9f7;
+      border: 1px solid #ece8e2;
+      padding: 24px;
+      border-radius: 14px;
+    }
+
+    .highlight h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .highlight p {
+      margin: 0 0 18px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .highlight a {
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 1px solid #999;
+    }
+
     footer {
-      margin-top: 80px;
-      padding-top: 30px;
       border-top: 1px solid #ece8e2;
       color: #999;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 36px 28px 52px;
       font-size: 13px;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 60px 22px;
+    @media (max-width: 820px) {
+      .header-inner {
+        display: block;
       }
 
-      h1 {
-        font-size: 38px;
+      .top-nav {
+        margin-top: 18px;
+        gap: 16px;
       }
 
-      .quote {
+      .content-wrap {
+        grid-template-columns: 1fr;
+        gap: 56px;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner,
+      .hero,
+      .content-wrap,
+      .footer-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .hero-text {
+        font-size: 20px;
+      }
+
+      .top-nav {
+        font-size: 13px;
+      }
+
+      .article-item h2 {
         font-size: 21px;
-        margin-top: 60px;
       }
     }
   </style>
@@ -107,71 +273,200 @@
 
 <body>
 
-  <main class="container">
+  <header class="site-header">
+    <div class="header-inner">
 
-    <div class="small">一個可以慢一點的地方</div>
+      <a class="brand" href="/">
+        舒雲｜Shuyun
+      </a>
 
-    <h1>舒雲｜Shuyun</h1>
+      <nav class="top-nav">
+        <a href="#">療癒文章</a>
+        <a href="#">神經可塑性</a>
+        <a href="#">給自己一分鐘</a>
+        <a href="#">影像筆記</a>
+        <a href="#">Podcast</a>
+        <a href="#" class="cta">預約療癒</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <section class="hero">
+
+    <div class="eyebrow">
+      一個可以慢一點的地方
+    </div>
+
+    <h1>
+      舒雲｜Shuyun
+    </h1>
 
     <div class="role">
       諮商心理師 × 社會工作師
     </div>
 
-    <section class="quote">
-      心理治療不是替一個人決定答案，<br>
-      而是陪他重新聽見自己，<br>
+    <div class="hero-text">
+      心理治療不是替一個人決定答案，
+      而是陪他重新聽見自己，
       找回感受、判斷與選擇的力量。
+    </div>
+
+    <div class="hero-sub">
+      這裡整理關於療癒、心理、關係、創傷、成癮與神經可塑性的內容。
+      不追著演算法走，讓值得留下來的文字，可以慢慢被找到。
+    </div>
+
+  </section>
+
+  <main class="content-wrap">
+
+    <section>
+
+      <div class="section-title">
+        最新內容
+      </div>
+
+      <div class="article-list">
+
+        <article class="article-item">
+          <a href="#">
+            <h2>神經可塑性｜我們的大腦，一直都還在改變</h2>
+            <p>
+              關於壓力、負向偏見、神經連結，以及我們如何重新建立新的反應路徑。
+            </p>
+          </a>
+        </article>
+
+        <article class="article-item">
+          <a href="#">
+            <h2>《給自己一分鐘》｜情緒來的時候，為什麼冷靜不了？</h2>
+            <p>
+              有時不是你不想冷靜，而是大腦正在判斷：現在有危險。
+            </p>
+          </a>
+        </article>
+
+        <article class="article-item">
+          <a href="#">
+            <h2>療癒文章｜重新聽見自己的感覺</h2>
+            <p>
+              心理治療不是替人決定答案，而是陪一個人找回自己的判斷與選擇。
+            </p>
+          </a>
+        </article>
+
+        <article class="article-item">
+          <a href="#">
+            <h2>影像筆記｜一些被我留下來的光</h2>
+            <p>
+              照片、文字與生活片段。那些值得被看見，也值得被記住的時刻。
+            </p>
+          </a>
+        </article>
+
+      </div>
+
     </section>
 
-    <section class="intro">
-      這裡放一些關於療癒、心理、關係，
-      以及人怎麼慢慢回到自己身上的文字。
-      <br><br>
-      不急著更新，也不追著演算法走。
-      想看的時候，再回來就好。
-    </section>
+    <aside class="sidebar">
 
-    <nav class="menu">
+      <div class="side-block">
 
-      <a href="#">
-        <span>關於我</span>
-        <span>→</span>
-      </a>
+        <div class="section-title">
+          和我一起工作
+        </div>
 
-      <a href="#">
-        <span>療癒文章</span>
-        <span>→</span>
-      </a>
+        <div class="highlight">
+          <h3>預約療癒</h3>
+          <p>
+            如果你希望有一段時間，可以好好談談自己正在經歷的事情。
+          </p>
+          <a href="#">了解預約方式 →</a>
+        </div>
 
-      <a href="#">
-        <span>神經可塑性</span>
-        <span>→</span>
-      </a>
+      </div>
 
-      <a href="#">
-        <span>《給自己一分鐘》</span>
-        <span>→</span>
-      </a>
+      <div class="side-block">
 
-      <a href="#">
-        <span>Podcast</span>
-        <span>→</span>
-      </a>
+        <div class="section-title">
+          更多入口
+        </div>
 
-      <a href="#">
-        <span>聯絡方式</span>
-        <span>→</span>
-      </a>
+        <div class="side-links">
 
-    </nav>
+          <a href="#">
+            <span>電子書</span>
+            <span>→</span>
+          </a>
 
-    <footer>
+          <a href="#">
+            <span>讀書會</span>
+            <span>→</span>
+          </a>
+
+          <a href="#">
+            <span>關於舒雲</span>
+            <span>→</span>
+          </a>
+
+          <a href="#">
+            <span>聯絡方式</span>
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="side-block">
+
+        <div class="section-title">
+          主題分類
+        </div>
+
+        <div class="side-links">
+
+          <a href="#">
+            <span>療癒文章</span>
+            <span>→</span>
+          </a>
+
+          <a href="#">
+            <span>神經可塑性</span>
+            <span>→</span>
+          </a>
+
+          <a href="#">
+            <span>給自己一分鐘</span>
+            <span>→</span>
+          </a>
+
+          <a href="#">
+            <span>影像筆記</span>
+            <span>→</span>
+          </a>
+
+          <a href="#">
+            <span>Podcast</span>
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
       © 2026 Shuyun
       <br>
       靜靜地留下文字，也留一點空白。
-    </footer>
-
-  </main>
+    </div>
+  </footer>
 
 </body>
 </html>
